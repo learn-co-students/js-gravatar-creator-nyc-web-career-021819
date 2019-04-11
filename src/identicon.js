@@ -1,3 +1,11 @@
 class Identicon {
-  // make use of the md5.array method, which is in scope because we required it in our index.html
+
+  constructor(string) {
+    this.hashedArr = md5.array(string)
+    this.r = this.hashedArr[0]
+    this.g = this.hashedArr[1]
+    this.b = this.hashedArr[2]
+    this.booleanArr = this.hashedArr.slice(0, 15).map(el => el % 2 === 0)
+  }
+
 }
